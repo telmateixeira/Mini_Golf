@@ -21,6 +21,10 @@ public class Pelota : MonoBehaviour
     private void Update()
     {
         PlayerInput();
+
+        if (LevelManager.main.outOfStrokes && rg.linearVelocity.magnitude <= 0.2f && !LevelManager.main.levelCompleted) {
+            LevelManager.main.GameOver();
+        }
     }
 
     private bool isReady() { 
@@ -71,6 +75,8 @@ public class Pelota : MonoBehaviour
             return;
         }
 
+        LevelManager.main.IncreaseStroke();
+
         Vector2 dir = (Vector2) transform.position - pos;
         rg.linearVelocity = Vector2.ClampMagnitude(dir * power, maxPower);
 
@@ -84,7 +90,7 @@ public class Pelota : MonoBehaviour
         float ballRadius = GetComponent<CircleCollider2D>().radius * transform.localScale.x;
         float distanceToCenter = Vector2.Distance(transform.position, collision.transform.position);
 
-        // Si el centro de la pelota est� dentro del hoyo
+        // Si el centro de la pelota esta dentro del hoyo
         if (distanceToCenter < (holeRadius - ballRadius))
         {
             inHole = true;
@@ -102,6 +108,9 @@ public class Pelota : MonoBehaviour
 
             GameObject fx = Instantiate(efectoMeta, transform.position, Quaternion.identity);
             Destroy(fx, 2f);
+
+            LevelManager.main.LevelComplete();
+
         }
     }
 
