@@ -13,7 +13,7 @@ public class Pelota : MonoBehaviour
     [Header("Atributos")]
     [SerializeField] private float maxPower = 10f;
     [SerializeField] private float power = 2f;
-    [SerializeField] private float maxGoalSpeed = 4f;
+
 
     private bool isDraggin;
     private bool inHole;
