@@ -38,11 +38,13 @@ public class LevelManager : MonoBehaviour
         strokes++;
         UpdateStrokeUI();
 
-        if (strokes >= maxStrokes)
+        // No marcar como fuera de tiros si ya completó el nivel
+        if (strokes >= maxStrokes && !levelCompleted)
         {
             outOfStrokes = true;
         }
     }
+
 
     public void LevelComplete()
     {
@@ -57,8 +59,10 @@ public class LevelManager : MonoBehaviour
 
     public void GameOver()
     {
+        if (levelCompleted) return; // Evita que se muestre Game Over si ya ganó
         gameOverUI.SetActive(true);
     }
+
 
     private void UpdateStrokeUI()
     {

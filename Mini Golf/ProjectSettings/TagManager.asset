@@ -6,6 +6,7 @@ TagManager:
   tags:
   - hoyo
   - level
+  - pelota
   layers:
   - Default
   - TransparentFX

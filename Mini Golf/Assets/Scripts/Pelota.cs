@@ -22,14 +22,18 @@ public class Pelota : MonoBehaviour
     {
         PlayerInput();
 
-        if (LevelManager.main.outOfStrokes && rg.linearVelocity.magnitude <= 0.2f && !LevelManager.main.levelCompleted) {
+        if (LevelManager.main.outOfStrokes && rg.linearVelocity.magnitude <= 0.2f && !LevelManager.main.levelCompleted)
+        {
             LevelManager.main.GameOver();
         }
     }
 
+
     private bool isReady() { 
         return rg.linearVelocity.magnitude <= 0.2f;
     }
+
+
 
     private void PlayerInput()
     {
@@ -96,6 +100,8 @@ public class Pelota : MonoBehaviour
             inHole = true;
             rg.linearVelocity = Vector2.zero; // Detener la pelota
             Debug.Log("Ganaste");
+
+            LevelManager.main.levelCompleted = true;
 
             // Desactivar la c�mara antes de ocultar la pelota
             if (Camera.main.TryGetComponent<Camara>(out Camara camara))

@@ -337,7 +337,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 105630556}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 363659276}
+        m_TargetAssemblyTypeName: StateManager, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MenuPrincipal
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &105630556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5469,7 +5481,6 @@ MonoBehaviour:
   efectoMeta: {fileID: 1354895209861345931, guid: 8f46e01da4fdadc43b62c7074a971f75, type: 3}
   maxPower: 12
   power: 4
-  maxGoalSpeed: 6
 --- !u!120 &333831711
 LineRenderer:
   serializedVersion: 2
@@ -6277,7 +6288,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 815567703}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 363659276}
+        m_TargetAssemblyTypeName: StateManager, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MenuPrincipal
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &815567703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6400,8 +6423,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -7,7 +7,7 @@ public class MenuNiveles : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Ball"))
+        if (collision.CompareTag("pelota"))
         {
             SceneManager.LoadSceneAsync(nombreNivel);
         }

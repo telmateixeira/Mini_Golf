@@ -87,7 +87,7 @@ public class MenuPelota : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Level"))
+        if (collision.CompareTag("level"))
         {
             CheckWinState();
         }
