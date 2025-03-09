@@ -5,7 +5,6 @@ using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
-
     public static LevelManager main;
 
     [Header("References")]
@@ -15,10 +14,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI levelCompletedStrokeUI;
     [Space(10)]
     [SerializeField] private GameObject gameOverUI;
-
     [Header("Attributes")]
     [SerializeField] private int maxStrokes;
-
     private int strokes = 0;
     [HideInInspector] public bool outOfStrokes;
     [HideInInspector] public bool levelCompleted;
@@ -37,14 +34,11 @@ public class LevelManager : MonoBehaviour
     {
         strokes++;
         UpdateStrokeUI();
-
-        // No marcar como fuera de tiros si ya completó el nivel
         if (strokes >= maxStrokes && !levelCompleted)
         {
             outOfStrokes = true;
         }
     }
-
 
     public void LevelComplete()
     {
@@ -69,3 +63,4 @@ public class LevelManager : MonoBehaviour
         strokeUI.text = strokes + "/" + maxStrokes;
     }
 }
+

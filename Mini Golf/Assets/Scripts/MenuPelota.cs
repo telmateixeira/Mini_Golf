@@ -7,7 +7,6 @@ public class MenuPelota : MonoBehaviour
     [SerializeField] private Rigidbody2D rg;
     [SerializeField] private LineRenderer lr;
     [SerializeField] private GameObject efectoMeta;
-
     [Header("Atributos")]
     [SerializeField] private float maxPower = 10f;
     [SerializeField] private float power = 2f;
@@ -18,7 +17,6 @@ public class MenuPelota : MonoBehaviour
     {
         PlayerInput();
     }
-
 
     private void PlayerInput()
     {
@@ -62,23 +60,13 @@ public class MenuPelota : MonoBehaviour
         {
             return;
         }
-
         Vector2 dir = (Vector2)transform.position - pos;
         rg.linearVelocity = Vector2.ClampMagnitude(dir * power, maxPower);
-
     }
 
     private void CheckWinState()
     {
         rg.linearVelocity = Vector2.zero; // Detener la pelota
-
-        // Desactivar la camara antes de ocultar la pelota
-        //if (Camera.main.TryGetComponent<Camara>(out Camara camara))
-        //{
-        //    camara.enabled = false;
-        //}
-
-        //yield return new WaitForSeconds(0.2f); // Esperar antes de ocultar la pelota
         gameObject.SetActive(false);
 
         GameObject fx = Instantiate(efectoMeta, transform.position, Quaternion.identity);
@@ -92,6 +80,4 @@ public class MenuPelota : MonoBehaviour
             CheckWinState();
         }
     }
-
-
 }
