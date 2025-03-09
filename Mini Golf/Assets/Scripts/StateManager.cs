@@ -17,6 +17,16 @@ public class StateManager : MonoBehaviour
         }
     }
 
+    public void QuitGame()
+    {
+        #if UNITY_EDITOR
+                    UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                // Si estamos en una build del juego
+                Application.Quit();
+        #endif
+    }
+
     public void ReloadLevel()
     {
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
